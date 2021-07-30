@@ -1,6 +1,7 @@
-package discord_bot_app;
+package app;
 
 import listeners.GoliraListener;
+import listeners.RollListener;
 import org.javacord.api.DiscordApi;
 import org.javacord.api.DiscordApiBuilder;
 import util.Config;
@@ -15,5 +16,6 @@ public class DiscordBotApp {
 
         DiscordApi api = new DiscordApiBuilder().setToken(config.getStringRequired(API_TOKEN)).login().join();
         api.addListener(new GoliraListener());
+        api.addListener(new RollListener());
     }
 }
